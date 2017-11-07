@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">15API Clima</string>
+    <string name="tiempo">El tiempo en tu Ciudad</string>
+    <string name="location">Ubicacion</string>
+    <string name="trespuntos">...</string>
+    <string name="temperature">Temperatura Actual</string>
+    <string name="pressure">Presion Atmosferica</string>
+    <string name="humidity">Humedad</string>
+    <string name="minimum">Temperatura Mínima</string>
+    <string name="maximum">Temperatura Máxima</string>
+    <string name="title_activity_adapter_ciudad">adapter_ciudad</string>
+    <string name="menu">Agregar Ciudad</string>
+    <string name="Id">Ingrese ID ciudad: </string>
+    <string name="nombre">Ingrese Nombre ciudad: </string>
+    <string name="boton">Agregar</string>
+</resources>

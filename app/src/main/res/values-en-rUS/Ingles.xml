@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">15API Weater</string>
+    <string name="tiempo">The weather in your city</string>
+    <string name="location">Location</string>
+    <string name="trespuntos">...</string>
+    <string name="temperature">Actual Temperature</string>
+    <string name="pressure">Atmospheric Pressure</string>
+    <string name="humidity">Humidity</string>
+    <string name="minimum">Minimum Temperature </string>
+    <string name="maximum">Maximum Temperature </string>
+    <string name="title_activity_adapter_ciudad">adapter ciudad</string>
+    <string name="menu">Add City</string>
+    <string name="Id">Enter ID City: </string>
+    <string name="nombre">Enter Name City: </string>
+    <string name="boton">Add</string>
+</resources>
