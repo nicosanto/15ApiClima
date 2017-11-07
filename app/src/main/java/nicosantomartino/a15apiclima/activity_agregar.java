@@ -14,53 +14,43 @@ public class activity_agregar extends AppCompatActivity {
     private SqLiteHelper sqLiteHelper;
     private SQLiteDatabase db;
     private EditText edtNombre;
+    private EditText edtId;
     private Button btnAgregar;
-
-    private String Nombre="Prueba";
-    private int Id=383887;
-    private EditText edtID;
+    private String Nombre;
+    private int Id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregar);
-
         sqLiteHelper = new SqLiteHelper(this,"DBciudad", null, 1);
         db = sqLiteHelper.getWritableDatabase();
 
+        edtId=(EditText) findViewById(R.id.edtID);
+        //Id=Integer.parseInt(edtId.getText().toString());
+        edtNombre=(EditText) findViewById(R.id.edtNombre);
+        btnAgregar= (Button)findViewById(R.id.btnAgregar);
 
-        edtID=(EditText) findViewById(R.id.edtID);
-        //Id=edtID.toString();
-
-       //Id = Integer.parseInt(edtID.getText().toString());
-
-        // android:inputType="number"
-        //  android:inputType="text"
-
-         edtNombre=(EditText) findViewById(R.id.edtNombre);
-         Nombre=edtNombre.toString();
-
-         btnAgregar= (Button)findViewById(R.id.btnAgregar);
-
-         btnAgregar.setOnClickListener(new View.OnClickListener() {
+        btnAgregar.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-                 //AGREGAR
-                     ContentValues regnuevo = new ContentValues();
+                 if(!edtId.getText().toString().equals("")&& !edtNombre.getText().toString().equals("")){
+                    Nombre=edtNombre.getText().toString();
+                    Id=Integer.parseInt(edtId.getText().toString());
 
                      //AGREGO UN EJEMPLO
-                     regnuevo.put(DbConstantes.COLUMN_ID, 3996063);
-                     regnuevo.put(DbConstantes.COLUMN_NOMBRE, "Nuevo Mexico");
-
-                     //ASI ANDA MAL
-                    //  regnuevo.put(DbConstantes.COLUMN_ID, Id);
-                    //  regnuevo.put(DbConstantes.COLUMN_NOMBRE, Nombre);
-
-                 db.insert(DbConstantes.TABLE_CIUDADES, null, regnuevo);
-                 Toast.makeText(getApplicationContext(),"Registro guardado correctamente.", Toast.LENGTH_LONG).show();
+                     //regnuevo.put(DbConstantes.COLUMN_ID, 3996063);
+                     //regnuevo.put(DbConstantes.COLUMN_NOMBRE, "Nuevo Mexico");
+                     ContentValues regnuevo = new ContentValues();
+                       regnuevo.put(DbConstantes.COLUMN_ID,Id );
+                       regnuevo.put(DbConstantes.COLUMN_NOMBRE,Nombre);
+                     db.insert(DbConstantes.TABLE_CIUDADES, null, regnuevo);
+                     Toast.makeText(getApplicationContext(),"Registro guardado correctamente.", Toast.LENGTH_LONG).show();
+                 }
+                 else {
+                     Toast.makeText(getApplicationContext(),"No se pudo guardar el Registro.", Toast.LENGTH_LONG).show();
+                 }
              }
          });
-
     }
-
 }
